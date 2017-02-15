@@ -21,4 +21,4 @@ WORKDIR /opt/yesod-nix-example
 RUN echo "{ allowunfree = true; }" > $HOME/.nixpkgs/config.nix
 ADD stack.yaml haskell-yesod-example.cabal ./
 RUN . $HOME/.nix-profile/etc/profile.d/nix.sh && stack setup
-RUN . $HOME/.nix-profile/etc/profile.d/nix.sh && stack install
+RUN . $HOME/.nix-profile/etc/profile.d/nix.sh && stack install --dependencies-only
