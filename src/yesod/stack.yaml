@@ -45,7 +45,7 @@ extra-deps: []
 flags: {}
 
 # Extra package databases containing global packages
-extra-package-dbs: [zlib1]
+extra-package-dbs: []
 
 # Control whether we use the GHC we find on the path
 # system-ghc: true
@@ -69,3 +69,5 @@ nix:
   # true by default when the nix section is present. Set
   # it to `false` to disable using Nix.
   enable: true
+
+  packages: [zlib]
