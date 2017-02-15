@@ -4,7 +4,7 @@
 
 # haskell-yesod-example
 
-**Example Haskell Yesod application using Docker, Stack and Nix**
+**Example Haskell Yesod application using Docker and Stack**
 
 ## Requirements
 
