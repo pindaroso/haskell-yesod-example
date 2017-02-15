@@ -1,5 +1,5 @@
 {-# LANGUAGE PackageImports #-}
-import "hakell-yesod-example" Application (develMain)
+import "haskell-yesod-example" Application (develMain)
 import Prelude (IO)
 
 main :: IO ()

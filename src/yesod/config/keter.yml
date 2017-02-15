@@ -1,6 +1,6 @@
 # After you've edited this file, remove the following line to allow
 # `yesod keter` to build your bundle.
-user-edited: true
+user-edited: false
 
 # A Keter app is composed of 1 or more stanzas. The main stanza will define our
 # web application. See the Keter documentation for more information on
@@ -15,8 +15,8 @@ stanzas:
     #
     # The path given is for Stack projects. If you're still using cabal, change
     # to
-    # exec: ../dist/build/yesod-nix-example/yesod-nix-example
-    exec: ../dist/bin/yesod-nix-example
+    # exec: ../dist/build/haskell-yesod-example/haskell-yesod-example
+    exec: ../dist/bin/haskell-yesod-example
 
     # Command line options passed to your application.
     args: []
@@ -25,7 +25,7 @@ stanzas:
       # You can specify one or more hostnames for your application to respond
       # to. The primary hostname will be used for generating your application
       # root.
-      - www.yesod-nix-example.com
+      - www.haskell-yesod-example.com
 
     # Enable to force Keter to redirect to https
     # Can be added to any stanza
@@ -34,7 +34,7 @@ stanzas:
   # Static files.
   - type: static-files
     hosts:
-      - static.yesod-nix-example.com
+      - static.haskell-yesod-example.com
     root: ../static
 
     # Uncomment to turn on directory listings.
@@ -44,9 +44,9 @@ stanzas:
   - type: redirect
 
     hosts:
-      - yesod-nix-example.com
+      - haskell-yesod-example.com
     actions:
-      - host: www.yesod-nix-example.com
+      - host: www.haskell-yesod-example.com
         # secure: false
         # port: 80
 
