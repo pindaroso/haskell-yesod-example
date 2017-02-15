@@ -1,4 +1,4 @@
-YESOD=haskellyesodexample_yesod_1
+YESOD=code_yesod_1
 
 all:
 	@docker-compose build
@@ -12,11 +12,15 @@ up:
 
 devel:
 	@docker exec -it $(YESOD) bash -c ". /home/robot/.nix-profile/etc/profile.d/nix.sh && \
-    	nix-shell --command 'yesod devel'"
+    	stack exec -- yesod devel"
 
 ghci:
 	@docker exec -it $(YESOD) bash -c ". /home/robot/.nix-profile/etc/profile.d/nix.sh && \
-    	nix-shell --command 'cabal repl --ghc-options=\"-O0 -fobject-code\"'"
+    	stack install $1"
+
+install:
+	@docker exec -it $(YESOD) bash -c ". /home/robot/.nix-profile/etc/profile.d/nix.sh && \
+    	stack install yesod-bin"
 
 keter:
 	@docker exec -it $(YESOD) bash -c ". /home/robot/.nix-profile/etc/profile.d/nix.sh && \
