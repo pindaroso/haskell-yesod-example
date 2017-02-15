@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/stilesb/haskell-yesod-example.svg?branch=master)](https://travis-ci.org/stilesb/haskell-yesod-example)
 
+[![Screenshot](/screenshot.png)](/screenshot.png)
+
 # haskell-yesod-example
 
 **Example Haskell Yesod application using Docker, Stack and Nix**
