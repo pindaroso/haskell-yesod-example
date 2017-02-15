@@ -11,7 +11,7 @@
 ```bash
 vagrant up
 vagrant ssh
-$ cd /home/vagrant/code
+$ cd code
 $ make
 ```
 

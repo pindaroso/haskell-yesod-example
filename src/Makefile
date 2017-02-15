@@ -1,5 +1,9 @@
 YESOD=haskellyesodexample_yesod_1
 
+all:
+	@docker-compose build
+	@docker-compose up -d
+
 bash:
 	@docker exec -it $(YESOD) bash
 
