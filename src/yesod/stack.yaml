@@ -68,6 +68,6 @@ extra-package-dbs: []
 nix:
   # true by default when the nix section is present. Set
   # it to `false` to disable using Nix.
-  enable: true
+  enable: false
 
   packages: [zlib]

@@ -1,5 +1,14 @@
 #!/bin/bash
 
+vagrant ssh -c "cd code && docker exec -it code_yesod_1 \
+    mkdir -p /tmp/yesod/src && rm -rf /tmp/yesod/src && \
+    cp -R /opt/yesod-nix-example /tmp/yesod/src && \
+    cd /tmp/yesod/src && nix-shell --command 'yesod keter' && \
+    mv -f /tmp/yesod/src/yesod-nix-example.keter /opt/yesod/ && \
+    rm -rf /opt/keter/incoming/yesod-nix-example.keter && \
+    cp /opt/yesod/yesod-nix-example.keter /opt/keter/incoming"
+
 git add -A
 git commit -m "$1"
 git push origin
+

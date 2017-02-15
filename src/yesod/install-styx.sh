@@ -1,6 +1,6 @@
 #!/bin/bash
 curl https://nixos.org/nix/install | sh
-. /home/vagrant/.nix-profile/etc/profile.d/nix.sh
+. ~/.nix-profile/etc/profile.d/nix.sh
 nix-env -f "<nixpkgs>" -iA haskellPackages.cabal2nix
 nix-env -f "<nixpkgs>" -iA haskellPackages.cabal-install
 nix-env -f "<nixpkgs>" -iA haskellPackages.styx
