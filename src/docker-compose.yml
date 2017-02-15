@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+    yesod:
+        build: ./yesod
+        command: tail -f /dev/null
+        ports:
+            - 3000:3000
+        environment:
+            - APPROOT=haskell-yesod-example.vagrant:3000
+        volumes:
+            - ./yesod:/opt/haskell-yesod-example
