@@ -1,10 +1,10 @@
 # haskell-yesod-example
 
-**Haskell Yesod Application Example with Stack and Nix Builds**
+**Example Haskell Yesod application using Docker and Nix**
 
 ## Requirements
 
-* Vagrant and Ansible or Docker and Docker Compose
+* Vagrant or Docker (Engine and Compose)
 
 ## Setup
 
