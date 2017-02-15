@@ -9,4 +9,10 @@ services:
         environment:
             - APPROOT=haskell-yesod-example.vagrant:3000
         volumes:
-            - ./yesod:/opt/haskell-yesod-example
+            - ./yesod/app:/opt/haskell-yesod-example/app
+            - ./yesod/config:/opt/haskell-yesod-example/config
+            - ./yesod/Handler:/opt/haskell-yesod-example/Handler
+            - ./yesod/Settings:/opt/haskell-yesod-example/Settings
+            - ./yesod/static:/opt/haskell-yesod-example/static
+            - ./yesod/templates:/opt/haskell-yesod-example/templates
+            - ./yesod/test:/opt/haskell-yesod-example/test

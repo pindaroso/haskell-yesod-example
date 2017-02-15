@@ -12,7 +12,7 @@ up:
 
 devel:
 	@docker exec -it $(YESOD) bash -c ". /home/robot/.nix-profile/etc/profile.d/nix.sh && \
-    	stack exec -- yesod devel"
+    	stack exec yesod devel"
 
 ghci:
 	@docker exec -it $(YESOD) bash -c ". /home/robot/.nix-profile/etc/profile.d/nix.sh && \

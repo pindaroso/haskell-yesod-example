@@ -1,0 +1,3 @@
+local-packages:
+  haskell-yesod-example:
+    location: .
