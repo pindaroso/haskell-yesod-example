@@ -10,9 +10,7 @@
 
 ```bash
 vagrant up
-vagrant ssh
-$ cd code
-$ make
+vagrant ssh -c "cd code && make"
 ```
 
 ### Notes
