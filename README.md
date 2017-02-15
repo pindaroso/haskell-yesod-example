@@ -2,7 +2,7 @@
 
 # haskell-yesod-example
 
-**Example Haskell Yesod application using Docker and Nix**
+**Example Haskell Yesod application using Docker, Stack and Nix**
 
 ## Requirements
 
@@ -15,4 +15,4 @@ vagrant up
 vagrant ssh -c "cd code && make"
 ```
 
-Questions or comments? Head over to [www.civiclabs.com](https://www.civiclabs.com) to get in touch with us.
+Questions or comments? Head over to [www.brandonstil.es](https://www.brandonstil.es) to get in touch with me.

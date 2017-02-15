@@ -18,6 +18,6 @@ RUN . $HOME/.nix-profile/etc/profile.d/nix.sh && \
     nix-channel --add https://nixos.org/channels/nixpkgs-unstable && \
     nix-channel --update
 WORKDIR /opt/yesod-nix-example
-RUN echo "{ allowUnfree = true; allowBroken = true; }" > $HOME/.nixpkgs/config.nix
+RUN echo "{ allowunfree = true; }" > $HOME/.nixpkgs/config.nix
 ADD stack.yaml haskell-yesod-example.cabal ./
-RUN . $HOME/.nix-profile/etc/profile.d/nix.sh && stack setup
+RUN . $HOME/.nix-profile/etc/profile.d/nix.sh && stack install --dependencies-only
