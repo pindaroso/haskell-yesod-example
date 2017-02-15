@@ -19,5 +19,5 @@ RUN . $HOME/.nix-profile/etc/profile.d/nix.sh && \
     nix-channel --update
 WORKDIR /opt/yesod-nix-example
 RUN echo "{ allowUnfree = true; allowBroken = true; }" > $HOME/.nixpkgs/config.nix
-ADD stack.yaml yesod-nix-example.cabal ./
+ADD stack.yaml haskell-yesod-example.cabal ./
 RUN . $HOME/.nix-profile/etc/profile.d/nix.sh && stack setup
