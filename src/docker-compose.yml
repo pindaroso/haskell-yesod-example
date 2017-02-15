@@ -8,11 +8,37 @@ services:
             - 3000:3000
         environment:
             - APPROOT=haskell-yesod-example.vagrant:3000
+            - PGUSER=postgres
+            - PGPASS=postgres
+            - PGHOST=postgres
+            - PGDATABASE=postgres
         volumes:
-            - ./yesod/app:/opt/haskell-yesod-example/app
-            - ./yesod/config:/opt/haskell-yesod-example/config
-            - ./yesod/Handler:/opt/haskell-yesod-example/Handler
-            - ./yesod/Settings:/opt/haskell-yesod-example/Settings
-            - ./yesod/static:/opt/haskell-yesod-example/static
-            - ./yesod/templates:/opt/haskell-yesod-example/templates
-            - ./yesod/test:/opt/haskell-yesod-example/test
+            - ./yesod:/opt/haskell-yesod-example
+            #- ./yesod/app:/opt/haskell-yesod-example/app
+            #- ./yesod/config:/opt/haskell-yesod-example/config
+            #- ./yesod/Handler:/opt/haskell-yesod-example/Handler
+            #- ./yesod/Settings:/opt/haskell-yesod-example/Settings
+            #- ./yesod/static:/opt/haskell-yesod-example/static
+            #- ./yesod/templates:/opt/haskell-yesod-example/templates
+            #- ./yesod/test:/opt/haskell-yesod-example/test
+        links:
+            - postgres
+        logging:
+            driver: syslog
+
+    data:
+        image: busybox:1
+        command: tail -f /dev/null
+        volumes:
+            - /mnt/docker/postgres:/var/lib/postgresql/data
+        logging:
+            driver: syslog
+
+    postgres:
+        image: postgres:9.6
+        ports:
+            - 5432:5432
+        volumes_from:
+            - data
+        logging:
+            driver: syslog

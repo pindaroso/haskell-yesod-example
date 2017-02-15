@@ -8,7 +8,7 @@ RUN apt-get update -y && apt-get upgrade -y && apt-get install -y \
 RUN useradd -ms /bin/bash robot
 RUN groupadd nixbld && usermod -a -G nixbld robot
 ENV HOME /home/robot
-RUN mkdir -p /nix /opt/keter/incoming /opt/keter/etc /opt/haskell-yesod-example $HOME/.nixpkgs && \
+RUN mkdir -p /nix /opt/keter/incoming /opt/keter/etc /opt/haskell-yesod-example/.stack-work $HOME/.nixpkgs && \
     chown -R robot /nix /opt/keter /opt/haskell-yesod-example $HOME/.nixpkgs
 ENV USER robot
 USER robot
@@ -20,6 +20,7 @@ RUN . $HOME/.nix-profile/etc/profile.d/nix.sh && \
 WORKDIR /opt/haskell-yesod-example
 RUN echo "{ allowunfree = true; }" > $HOME/.nixpkgs/config.nix
 ADD stack.yaml haskell-yesod-example.cabal ./
+VOLUME ["/opt/haskell-yesod-example/.stack-work"]
 RUN stack setup
 RUN stack install yesod-bin cabal-install
 RUN stack install --dependencies-only

@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
             "https://github.com/docker/compose/releases/download/1.10.0/docker-compose-$(uname -s)-$(uname -m)"
         chmod +x /usr/local/bin/docker-compose
         chown -R $U /usr/local/bin/docker-compose
-        mkdir -p /home/$U/code
+        mkdir -p /home/$U/code /mnt/docker
         exit 0
     SHELL
     config.vm.synced_folder "./src", "/home/vagrant/code", type: 'nfs'

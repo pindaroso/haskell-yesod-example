@@ -1,2 +1,3 @@
 #!/bin/bash
-vagrant ssh -c "cd code && docker exec -it code_yesod_1 stack exec -- yesod devel"
+vagrant ssh -c 'cd code && docker exec -it code_yesod_1 bash -c \
+    "stack exec --allow-different-user -- yesod devel"'
