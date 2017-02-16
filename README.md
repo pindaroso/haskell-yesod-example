@@ -18,3 +18,5 @@ vagrant up
 ```
 
 Questions or comments? Head over to [www.brandonstil.es](https://www.brandonstil.es) to get in touch with me.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-92066658-1/stilesb/readme)](https://github.com/stilesb/haskell-yesod-example)
